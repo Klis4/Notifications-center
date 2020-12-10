@@ -1,11 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Table from './components/Table.js';
-import Pagination_Bar from './components/Pagination.js'
-import Mark_All_As_Read from './components/MarkAllAsRead.js'
+import Pagination_Bar from './components/Pagination.js';
+import Mark_All_As_Read from './components/MarkAllAsRead.js';
+import Warning_Message from './components/WarningMessage.js';
 import { createGlobalStyle } from 'styled-components';
-import styled from 'styled-components';
 import StorageOfColors from './css_resources/colors';
+
+import HTTP from './service/httpRequest';
+const http = new HTTP(); 
 
 
 const color = new StorageOfColors();
@@ -21,21 +24,6 @@ const GlobalStyle = createGlobalStyle`
     }
 `;
 
-const Warning_Message = styled.div`
-    width: 50vw;
-    height: 50vh;
-
-    position: absolute;
-    top: 25vh;
-    left: 25vw;
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    color: ${color.get('Default_Text')};    
-`;
-
 class NotificationsCenter extends React.Component {
     render() {
         return(
@@ -44,11 +32,17 @@ class NotificationsCenter extends React.Component {
                 <Table />
                 <Pagination_Bar />
                 <Mark_All_As_Read />
-                <Warning_Message>No notifications found :)</Warning_Message>
+                <Warning_Message />
             </React.Fragment>
             
         );
     }
 }
 
-ReactDOM.render(<NotificationsCenter />, document.getElementById('root'));
+function displayNotifications () {
+    http.get('1', 2, 'desc');
+}
+const onloaded = () =>  {document.body.onload(displayNotifications)};
+
+
+ReactDOM.render(<NotificationsCenter onLoad='displayNotifications'/>, document.getElementById('root'));

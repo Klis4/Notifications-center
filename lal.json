@@ -1,0 +1,49 @@
+{"notifications":[
+    {
+        "createdOn":"2020-12-08T17:41:54.942Z",
+        "isRead":true,
+        "category":"ERROR",
+        "priority":"HIGH",
+        "text":"Your attention required",
+        "readOn":"2020-12-08T17:41:55.158Z",
+        "ID":"5fcfbae3b0fcc4001b3c4c51"
+    },
+    {
+        "createdOn":"2020-12-08T17:41:54.942Z",
+        "isRead":false,"category":"ERROR",
+        "priority":"NORMAL",
+        "text":"CSV validation failed for file 1.csv",
+        "ID":"5fcfbae3b0fcc4001b3c4c56"
+    },
+    {
+        "createdOn":"2020-12-08T17:41:54.942Z",
+        "isRead":false,
+        "category":"CRIT",
+        "priority":"URGENT",
+        "text":"CSV validation failed for file 1.csv",
+        "ID":"5fcfbae3b0fcc4001b3c4c47"
+    },
+    {
+        "createdOn":"2020-12-08T17:41:54.942Z",
+        "isRead":false,"category":"CRIT",
+        "priority":"VERYLOW",
+        "text":"This session is running in Sandbox mode. Changes will not be saved",
+        "ID":"5fcfbae3b0fcc4001b3c4c42"
+    },
+    {
+        "createdOn":"2020-12-08T17:41:54.942Z",
+        "isRead":true,
+        "category":"ERROR",
+        "priority":"VERYLOW",
+        "text":"Your uploading file_name.zip was broken",
+        "readOn":"2020-12-08T17:41:55.158Z",
+        "ID":"5fcfbae3b0fcc4001b3c4c4c"}],
+        
+    "pagination":{
+        "notificationsCount":100,
+        "total":20,
+        "page":"1",
+        "perPage":5,
+        "hasNext":true
+        }
+    }

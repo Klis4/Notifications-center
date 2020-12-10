@@ -2,9 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import StorageOfColors from '../css_resources/colors'
 import TableRow from './TableRow';
+import HTTP from '../service/httpRequest';
 
 const color = new StorageOfColors(); 
- 
+const http = new HTTP();
 //styled elements
 const Notifications_Table = styled.table`
     width: 100vw;
@@ -75,6 +76,10 @@ const Date_Tab = styled.td`
     padding 0;
     width: 30vw;
 `;
+
+function displayNotifications () {
+    http.get('1', 2, 'desc');
+}
 
 class Table extends React.Component {
     render () {
